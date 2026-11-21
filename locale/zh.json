@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Markdown 增强渲染",
+    "description": "可扩展的 Markdown 文档预览：代码高亮、GFM 表格、易读的 frontmatter、Mermaid 图表，以及覆盖非左侧栏区域的顶层画布。渲染器由类型化的扩展管线组合；聊天不受影响。"
+  }
+}

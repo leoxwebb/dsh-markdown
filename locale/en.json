@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Enhanced Markdown",
+    "description": "Extensible Markdown document preview with syntax highlighting, GFM tables, readable frontmatter, Mermaid fences, and a top-layer diagram canvas. Renderers are composed from a typed extension pipeline; Chat is untouched."
+  }
+}

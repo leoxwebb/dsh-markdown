@@ -1,0 +1,71 @@
+{
+  "name": "@local/dsh-markdown",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enhanced Markdown document preview for DSH with syntax highlighting, Mermaid fences, and a top-layer diagram canvas.",
+  "type": "module",
+  "scripts": {
+    "build": "tsx scripts/build.mts",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src test scripts",
+    "format": "biome check --write src test scripts",
+    "test": "vitest run",
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run build && pnpm run test",
+    "guidance:search": "npx -y modern-web-guidance@latest search",
+    "guidance:retrieve": "npx -y modern-web-guidance@latest retrieve"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "THIRD_PARTY_LICENSES.md",
+    "docs"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-sidebar-documentpreview",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  },
+  "dependencies": {
+    "dompurify": "3.2.6",
+    "highlight.js": "^11.11.1",
+    "mermaid": "11.17.2",
+    "react-markdown": "^10.1.0",
+    "rehype-highlight": "^7.0.2",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.8",
+    "@types/hast": "^3.0.4",
+    "@types/node": "22.18.0",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "jsdom": "26.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "unified": "^11.0.5",
+    "vite": "^7.2.2",
+    "vitest": "^3.2.4"
+  }
+}
